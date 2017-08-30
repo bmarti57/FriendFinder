@@ -1,0 +1,23 @@
+body {
+	background-image: url("squared_metal.png");
+	margin: 20px 50px 0px 50px;
+}
+
+h1 {
+	text-align: center;
+	color: #8bbb89;
+}
+
+.glyphicon-user {
+	color: #8bbb89;
+}
+
+input {
+	width: 90%;
+}
+
+.jumbotron {
+	border-style: solid;
+	border-color: #8bbb89;
+	border-width: 2px;
+}

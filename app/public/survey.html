@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Survey</title>
+	<link rel="stylesheet" href="reset.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="style.css">
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+	crossorigin="anonymous"></script>	
+</head>
+
+<body>
+
+	<div class="container">
+		<div class="jumbotron">
+		<h1>Survey Questions</h1>
+		<h2>About You</h2>
+			<form action="POST">
+			<h3>Name (Required)</h3>
+			<input type="text" id="userName"><br><br>
+			<h3>Link to Photo Image (Required)</h3>
+			<input type="text" id="userPhoto"><br><br><br>
+
+			<h2>Question 1</h2>
+			<h3>It is hard for you to concentrate on a task in which you have no interest.</h3>
+
+			<select name="question1" id="question1">
+				<option value=" " disabled selected>Please Select an Option</option>
+				<option value="1">1 (Strongly Disagree)</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5 (Strongly Agree)</option>
+			</select><br><br>
+
+			<h2>Question 2</h2>
+			<h3>You are a morning person.</h3>
+
+			<select name="question2" id="question2">
+				<option value=" " disabled selected>Please Select an Option</option>
+				<option value="1">1 (Strongly Disagree)</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5 (Strongly Agree)</option>
+			</select><br><br>
+
+			<h2>Question 3</h2>
+			<h3>You enjoy spending your free time meeting new people.</h3>
+
+			<select name="question3" id="question3">
+				<option value=" " disabled selected>Please Select an Option</option>
+				<option value="1">1 (Strongly Disagree)</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5 (Strongly Agree)</option>
+			</select><br><br>
+
+			<h2>Question 4</h2>
+			<h3>You like to try new things.</h3>
+
+			<select name="question4" id="question4">
+				<option value=" " disabled selected>Please Select an Option</option>
+				<option value="1">1 (Strongly Disagree)</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5 (Strongly Agree)</option>
+			</select><br><br>
+
+			<h2>Question 5</h2>
+			<h3>You rarely get upset.</h3>
+
+			<select name="question5" id="question5">
+				<option value=" " disabled selected>Please Select an Option</option>
+				<option value="1">1 (Strongly Disagree)</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5 (Strongly Agree)</option>
+			</select><br><br>
+
+			<h2>Question 6</h2>
+			<h3>You have a difficult time talking to people with an opposing point of view.</h3>
+
+			<select name="question6" id="question6">
+				<option value=" " disabled selected>Please Select an Option</option>
+				<option value="1">1 (Strongly Disagree)</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5 (Strongly Agree)</option>
+			</select><br><br>
+
+			<h2>Question 7</h2>
+			<h3>You rather work by yourself.</h3>
+
+			<select name="question7" id="question7">
+				<option value=" " disabled selected>Please Select an Option</option>
+				<option value="1">1 (Strongly Disagree)</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5 (Strongly Agree)</option>
+			</select><br><br>
+
+			<h2>Question 8</h2>
+			<h3>You enjoy spending time with people who make you laugh.</h3>
+
+			<select name="question8" id="question8">
+				<option value=" " disabled selected>Please Select an Option</option>
+				<option value="1">1 (Strongly Disagree)</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5 (Strongly Agree)</option>
+			</select><br><br>
+
+			<h2>Question 9</h2>
+			<h3>You prefer spending time outdoors.</h3>
+
+			<select name="question9" id="question9">
+				<option value=" " disabled selected>Please Select an Option</option>
+				<option value="1">1 (Strongly Disagree)</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5 (Strongly Agree)</option>
+			</select><br><br>
+
+			<h2>Question 10</h2>
+			<h3>You would rather go to a restaurant you like than try a new one.</h3>
+
+			<select name="question10" id="question10">
+				<option value=" " disabled selected>Please Select an Option</option>
+				<option value="1">1 (Strongly Disagree)</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5 (Strongly Agree)</option>
+			</select><br><br>
+
+			<input type="Submit" class="btn btn-primary btn-lg">
+				
+			</form>
+		</div>
+	</div>
+
+	<footer><p><a href="/api/friendlist">API Friends List</a> | <a href="https://github.com/bmarti57/FriendFinder.git">GitHub Repository</a></p></footer>
+
+	<!-- Modal Dialog Displaying Closest Friend Match -->
+	<div id="modal1" class="modal">
+		<div class="modal-content">
+			<h4>Closest Friend Match</h4>
+			<div class="divider"></div>
+			<h5 id="userMatch"></h5>
+			<img id="userMatchImage" class="materialboxed" width="650" src="">
+		</div>
+		<div class="modal-footer">
+			<a href="/survey" class="modal-action modal-close waves-effect waves-green btn-flat">Fill Again!</a>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('select').material_select();
+			$('.modal').modal({
+				dismissible: false, // Modal can be dismissed by clicking outside of the modal
+				opacity: .5, // Opacity of modal background
+				inDuration: 300, // Transition in duration
+				outDuration: 200, // Transition out duration
+				startingTop: '4%', // Starting top style attribute
+				endingTop: '10%' // Ending top style attribute
+			});
+		});
+		// Activate submit button
+		$('#submitButton').on('click', function(event) {
+			event.preventDefault();
+			// Gather user inputs
+			var userInput = {
+				name: $('#userName').val().trim(),
+				photo: $('#userPhoto').val().trim(),
+				scores:[
+					$('#question1').val().trim(),
+					$('#question2').val().trim(),
+					$('#question3').val().trim(),
+					$('#question4').val().trim(),
+					$('#question5').val().trim(),
+					$('#question6').val().trim(),
+					$('#question7').val().trim(),
+					$('#question8').val().trim(),
+					$('#question9').val().trim(),
+					$('#question10').val().trim()
+				]
+			};
+			// console.log('userInput = ' + JSON.stringify(userInput));
+			// Add user inputs to friends list
+			$.post('/api/friends', userInput)
+      		.done(function(data) {
+      			// console.log('response = ' + JSON.stringify(data));
+      			// Set the name and image values of friend match
+      			$('#userMatch').html(data.matchName);
+		    	$("#userMatchImage").attr("src", data.matchImage);
+		    	// Pop open the modal dialog
+      			$('#modal1').modal('open');
+      		});
+		});
+	</script>
+	
+</body>
+</html>
