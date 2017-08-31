@@ -5,20 +5,11 @@ var bodyParser = require("body-parser");
 var app = express();
 var PORT = 8081;
 
-app.use(express.static(path.join(__dirname, "./app/public")));
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ 
-    extended: true
-}));
-app.use(bodyParser.text());
+require("./app/routing/htmlRoutes.js")(app);
 
-require(path.join(__dirname, "./app/routing/apiRoutes"))(app);
-require(path.join(__dirname, "./app/routing/htmlRoutes"))(app);
-
-
-app.listen(PORT, function() {
-    console.log("Listening on: " + PORT)
-});
-
+app.listen(PORT);
+console.log("Listening on: " + PORT);
 

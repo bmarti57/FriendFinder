@@ -3,11 +3,39 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Survey</title>
-	<link rel="stylesheet" href="reset.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<link rel="stylesheet" href="style.css">
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-	crossorigin="anonymous"></script>	
+	crossorigin="anonymous"></script>
+<style>
+	body {
+	background: #b3b3b9;
+	margin: 20px 50px 0px 50px;
+	}
+
+	h1 {
+		text-align: center;
+		color: #8bbb89;
+	}
+
+	.glyphicon-user {
+		color: #8bbb89;
+	}
+
+	input {
+		width: 90%;
+	}
+
+	.jumbotron {
+		border-style: solid;
+		border-color: #8bbb89;
+		border-width: 2px;
+	}
+
+	#surveyTitle {
+		text-decoration: underline;
+	}
+</style>
+
 </head>
 
 <body>
@@ -16,7 +44,7 @@
 		<div class="jumbotron">
 		<h1 id="surveyTitle">Survey Questions</h1><br>
 		<div class="text-center">
-			<a href="home.html"><button class="btn btn-default btn-lg"><span class="glyphicon glyphicon-home"></span></button></a>
+			<a href="/"><button class="btn btn-default btn-lg"><span class="glyphicon glyphicon-home"></span></button></a>
 		</div>
 		<h2>About You</h2>
 			<form action="POST">
