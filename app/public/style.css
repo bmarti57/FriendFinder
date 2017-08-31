@@ -21,3 +21,7 @@ input {
 	border-color: #8bbb89;
 	border-width: 2px;
 }
+
+#surveyTitle {
+	text-decoration: underline;
+}
