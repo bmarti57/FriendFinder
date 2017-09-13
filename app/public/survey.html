@@ -6,36 +6,35 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
 	crossorigin="anonymous"></script>
-<style>
-	body {
-	background: #b3b3b9;
-	margin: 20px 50px 0px 50px;
-	}
+	<style>
+body {
+    background: #b3b3b9;
+    margin: 20px 50px 0px 50px;
+}
 
-	h1 {
-		text-align: center;
-		color: #8bbb89;
-	}
+h1 {
+    text-align: center;
+    color: #8bbb89;
+}
 
-	.glyphicon-user {
-		color: #8bbb89;
-	}
+.glyphicon-user {
+    color: #8bbb89;
+}
 
-	input {
-		width: 90%;
-	}
+input {
+    width: 90%;
+}
 
-	.jumbotron {
-		border-style: solid;
-		border-color: #8bbb89;
-		border-width: 2px;
-	}
+.jumbotron {
+    border-style: solid;
+    border-color: #8bbb89;
+    border-width: 2px;
+}
 
-	#surveyTitle {
-		text-decoration: underline;
-	}
-</style>
-
+#surveyTitle {
+    text-decoration: underline;
+}
+	</style>
 </head>
 
 <body>
@@ -49,9 +48,9 @@
 		<h2>About You</h2>
 			<form action="POST">
 			<h3>Name (Required)</h3>
-			<input type="text" id="userName"><br><br>
+			<input type="text" id="userName" class="form-control" required><br><br>
 			<h3>Link to Photo Image (Required)</h3>
-			<input type="text" id="userPhoto"><br><br><br>
+			<input type="text" id="userPhoto" class="form-control" required><br><br><br>
 
 			<h2>Question 1</h2>
 			<h3>It is hard for you to concentrate on a task in which you have no interest.</h3>
@@ -181,35 +180,42 @@
 
 	<footer><p><a href="/api/friends">API Friends List</a> | <a href="https://github.com/bmarti57/FriendFinder.git">GitHub Repository</a></p></footer>
 
-	<div id="modal1" class="modal">
-		<div class="modal-content">
-			<h4>Closest Friend Match</h4>
-			<div class="divider"></div>
-			<h5 id="userMatch"></h5>
-			<img id="userMatchImage" class="materialboxed" width="650" src="">
-		</div>
-		<div class="modal-footer">
-			<a href="/survey" class="modal-action modal-close waves-effect waves-green btn-flat">Go Back To Survey</a>
+	<div id="resultsModal" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="buton" class="close" data-dismiss="modal">&times;</button>
+					<h2 class="modal-title"><strong>Best Match</strong></h2>
+				</div>
+				<div class="modal-body">
+					<h2 id="userMatch"></h2>
+					<img id="userMatchImage" src="" alt="User Match Photo">
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+
 		</div>
 	</div>
 
 	<script type="text/javascript">
-		$(document).ready(function() {
-			$('select').material_select();
-			$('.modal').modal({
-				dismissible: false, 
-				opacity: .5, 
-				inDuration: 300, 
-				outDuration: 200, 
-				startingTop: '4%', 
-				endingTop: '10%' 
-			});
-		});
 
 		$('#submitButton').on('click', function(event) {
-			event.preventDefault();
+			function validateForm() {
+				var isValid = true;
+				$(".form-control").each(function() {
+					if($(this).val() === "") {
+						isValid = false;
+					}
+				});
+				return isValid;
+			}
 
-			var userInput = {
+			if (validateForm()) {
+
+				var userInput = {
 				name: $('#userName').val().trim(),
 				photo: $('#userPhoto').val().trim(),
 				scores:[
@@ -223,17 +229,21 @@
 					$('#question8').val().trim(),
 					$('#question9').val().trim(),
 					$('#question10').val().trim()
-				]
+				] 
 			};
-			$.post('/api/friends', userInput)
-      		.done(function(data) {
+			var currentURL = window.location.origin;
+			$.post(currentURL + '/api/friends', userInput, function(data) {
       			
 
-      			$('#userMatch').html(data.matchName);
-		    	$("#userMatchImage").attr("src", data.matchImage);
+      			$('#userMatch').text(data.name);
+		    	$("#userMatchImage").attr("src", data.photo);
 
-      			$('#modal1').modal('open');
-      		});
+      			$('#resultsModal').modal('toggle');
+			});
+			} else {
+				alert("Please fill out all fields before submitting.")
+			}
+			return false;	  
 		});
 	</script>
 	

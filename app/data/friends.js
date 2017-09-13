@@ -1,4 +1,4 @@
-var friendsArray = [
+var friends= [
 	{
 		name: 'Doug',
 		photo: 'https://img.buzzfeed.com/buzzfeed-static/static/enhanced/webdr05/2013/7/12/13/enhanced-buzz-orig-30348-1373648544-22.jpg?downsize=715:*&output-format=auto&output-quality=auto',
@@ -33,4 +33,4 @@ var friendsArray = [
 	}
 ];
 
-module.exports = friendsArray;
+module.exports = friends;
